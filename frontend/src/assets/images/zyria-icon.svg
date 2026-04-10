@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <title>Zyria Icon</title>
+  <desc>Zyria logo icon — node-flow Z mark in teal and slate</desc>
+  <rect width="200" height="200" fill="white"/>
+  <circle cx="72" cy="52" r="14" fill="#0D9E75" />
+  <circle cx="114" cy="80" r="10" fill="#1A3A3A" />
+  <circle cx="90" cy="110" r="10" fill="#1A3A3A" />
+  <circle cx="132" cy="148" r="14" fill="#0D9E75" />
+  <line x1="86" y1="62" x2="107" y2="75" stroke="#0D9E75" stroke-width="4" stroke-linecap="round"/>
+  <line x1="114" y1="90" x2="92" y2="105" stroke="#1A3A3A" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="99" y1="118" x2="120" y2="139" stroke="#0D9E75" stroke-width="4" stroke-linecap="round"/>
+  <line x1="84" y1="65" x2="120" y2="137" stroke="#0D9E75" stroke-width="1.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="102" cy="100" r="62" fill="none" stroke="#0D9E75" stroke-width="1.5" opacity="0.18"/>
+</svg>
