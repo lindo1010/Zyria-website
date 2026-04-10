@@ -1,0 +1,14 @@
+<div>
+  <app-section-header label="What Drives Us" title="Our Values" />
+  <div class="values__grid" appAnimateOnScroll>
+    @for (value of values; track value.title) {
+      <div class="values__card">
+        <div class="values__icon">
+          <span>{{ value.icon }}</span>
+        </div>
+        <h3 class="values__title">{{ value.title }}</h3>
+        <p class="values__desc">{{ value.description }}</p>
+      </div>
+    }
+  </div>
+</div>
