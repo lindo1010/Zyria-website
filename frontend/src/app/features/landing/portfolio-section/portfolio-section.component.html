@@ -1,0 +1,10 @@
+<section class="portfolio">
+  <div class="portfolio__container">
+    <app-section-header label="Our Work" title="Featured Projects" />
+    <div class="portfolio__grid" appAnimateOnScroll>
+      @for (project of projects; track project.title) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>
