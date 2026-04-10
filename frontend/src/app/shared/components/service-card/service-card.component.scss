@@ -1,0 +1,46 @@
+@use 'styles/mixins' as *;
+
+.service-card {
+  @include glow-card;
+  padding: 24px;
+  text-align: center;
+
+  &--expanded {
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--accent);
+
+    .service-card:not(.service-card--expanded) & {
+      margin: 0 auto 16px;
+    }
+  }
+
+  &__title { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+
+  &__desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+
+  &__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+  &__tag {
+    background: var(--accent-glow);
+    border: 1px solid var(--border-hover);
+    color: var(--accent);
+    font-size: 0.625rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+}
