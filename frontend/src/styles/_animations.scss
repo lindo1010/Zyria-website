@@ -1,0 +1,22 @@
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(13, 158, 117, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(13, 158, 117, 0.4); }
+}
+
+.aos-hidden { opacity: 0; }
+.aos-visible { animation: fadeInUp 0.6s ease forwards; }

@@ -1,0 +1,71 @@
+@use 'styles/mixins' as *;
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+
+  @include desktop { grid-template-columns: 1fr 1fr; }
+
+  &__text {
+    .label { margin-bottom: 12px; }
+    h2 { margin-bottom: 16px; }
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo-card {
+    @include glow-card;
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+
+  &__logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  }
+
+  &__logo-name {
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+  }
+
+  &__logo-tagline {
+    position: relative;
+    font-size: 0.5rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+  }
+
+  img {
+    position: relative;
+  }
+}

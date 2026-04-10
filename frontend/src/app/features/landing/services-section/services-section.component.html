@@ -1,0 +1,13 @@
+<section class="services-preview">
+  <div class="services-preview__container">
+    <app-section-header label="What We Do" title="Our Services" />
+    <div class="services-preview__grid" appAnimateOnScroll>
+      @for (service of services; track service.title) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+    <div class="services-preview__link">
+      <a routerLink="/services">View All Services &rarr;</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+@if (submitSuccess()) {
+  <div class="form-success">
+    <div class="form-success__icon">✓</div>
+    <h3>Message Sent!</h3>
+    <p>Thank you for reaching out. We'll get back to you soon.</p>
+    <button class="form-success__btn" (click)="submitSuccess.set(false)">Send Another Message</button>
+  </div>
+} @else {
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
+    <h3 class="contact-form__title">Send Us a Message</h3>
+
+    <!-- Name -->
+    <div class="contact-form__field">
+      <label for="name" class="contact-form__label">Full Name *</label>
+      <input id="name" formControlName="name" type="text" class="contact-form__input" placeholder="Your name">
+      @if (form.controls.name.touched && form.controls.name.errors) {
+        <span class="contact-form__error">
+          @if (form.controls.name.errors['required']) { Name is required. }
+          @else if (form.controls.name.errors['minlength']) { Name must be at least 2 characters. }
+        </span>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="contact-form__field">
+      <label for="email" class="contact-form__label">Email Address *</label>
+      <input id="email" formControlName="email" type="email" class="contact-form__input" placeholder="you@example.com">
+      @if (form.controls.email.touched && form.controls.email.errors) {
+        <span class="contact-form__error">
+          @if (form.controls.email.errors['required']) { Email is required. }
+          @else if (form.controls.email.errors['email']) { Please enter a valid email. }
+        </span>
+      }
+    </div>
+
+    <!-- Subject -->
+    <div class="contact-form__field">
+      <label for="subject" class="contact-form__label">Subject</label>
+      <select id="subject" formControlName="subject" class="contact-form__input contact-form__select">
+        <option value="">Select a subject...</option>
+        @for (option of subjectOptions; track option) {
+          <option [value]="option">{{ option }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- Message -->
+    <div class="contact-form__field">
+      <label for="message" class="contact-form__label">Message *</label>
+      <textarea id="message" formControlName="message" class="contact-form__input contact-form__textarea" rows="5" placeholder="Tell us about your project..."></textarea>
+      @if (form.controls.message.touched && form.controls.message.errors) {
+        <span class="contact-form__error">
+          @if (form.controls.message.errors['required']) { Message is required. }
+          @else if (form.controls.message.errors['minlength']) { Message must be at least 10 characters. }
+        </span>
+      }
+    </div>
+
+    @if (submitError()) {
+      <div class="contact-form__submit-error">{{ submitError() }}</div>
+    }
+
+    <button type="submit" class="contact-form__submit" [disabled]="submitting()">
+      @if (submitting()) {
+        Sending...
+      } @else {
+        Send Message
+      }
+    </button>
+  </form>
+}

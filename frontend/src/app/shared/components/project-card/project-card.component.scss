@@ -1,0 +1,32 @@
+@use 'styles/mixins' as *;
+
+.project-card {
+  @include glow-card;
+  overflow: hidden;
+
+  &__image {
+    height: 160px;
+    background: linear-gradient(135deg, var(--accent-glow), rgba(13, 158, 117, 0.03));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__placeholder { font-size: 2rem; color: rgba(13, 158, 117, 0.3); }
+
+  &__body { padding: 20px; }
+
+  &__title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 8px; }
+
+  &__desc { font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 12px; }
+
+  &__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  &__tag {
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.5625rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="process">
+  <div class="process__header">
+    <span class="label">How We Work</span>
+    <h2>Our Process</h2>
+  </div>
+  <div class="process__steps">
+    @for (step of steps; track step.number; let last = $last) {
+      <div class="process__step">
+        <div class="process__circle">
+          <span>{{ step.number }}</span>
+        </div>
+        <h3 class="process__title">{{ step.title }}</h3>
+        <p class="process__desc">{{ step.description }}</p>
+      </div>
+      @if (!last) {
+        <div class="process__connector"></div>
+      }
+    }
+  </div>
+</div>

@@ -1,0 +1,77 @@
+@use 'styles/mixins' as *;
+
+.page-header {
+  position: relative;
+  padding: 60px 20px 48px;
+  text-align: center;
+  background: linear-gradient(160deg, #060612 0%, #0a1a15 50%, #060612 100%);
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13, 158, 117, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__content { position: relative; z-index: 2; }
+  &__breadcrumb {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+
+    &--active { color: var(--accent); }
+  }
+
+  h1 { margin-bottom: 12px; }
+  p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+.about-story {
+  padding: 60px 0;
+
+  &__container { @include container; }
+}
+
+.about-mission {
+  padding: 24px 0;
+  background: var(--bg-secondary);
+}
+
+.about-values {
+  padding: 60px 0;
+
+  &__container { @include container; }
+}
+
+.about-cta {
+  padding: 0 0 80px;
+
+  &__container { @include container; }
+
+  &__card {
+    background: linear-gradient(135deg, var(--accent-glow), rgba(13, 158, 117, 0.03));
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    text-align: center;
+
+    h2 { margin-bottom: 8px; }
+    p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+  }
+}

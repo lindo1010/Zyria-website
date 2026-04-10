@@ -1,0 +1,38 @@
+<!-- Page header -->
+<section class="page-header">
+  <div class="page-header__glow" aria-hidden="true"></div>
+  <div class="page-header__content">
+    <span class="page-header__breadcrumb">Home / <span class="page-header__breadcrumb--active">Services</span></span>
+    <h1>What We Build</h1>
+    <p>End-to-end software solutions tailored to your business needs.</p>
+  </div>
+</section>
+
+<!-- Service cards -->
+<section class="services-detail">
+  <div class="services-detail__container">
+    <div class="services-detail__list" appAnimateOnScroll>
+      @for (service of services; track service.title) {
+        <app-service-card [service]="service" [expanded]="true" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="services-process">
+  <div class="services-process__container">
+    <app-process-steps />
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="services-cta">
+  <div class="services-cta__container">
+    <div class="services-cta__card">
+      <h2>Need a Custom Solution?</h2>
+      <p>Let's discuss your project requirements.</p>
+      <app-cta-button link="/contact" variant="primary">Get In Touch</app-cta-button>
+    </div>
+  </div>
+</section>

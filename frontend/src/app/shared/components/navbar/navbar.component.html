@@ -1,0 +1,46 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="navbar__container">
+    <a routerLink="/" class="navbar__logo" (click)="closeMobileMenu()">
+      <img src="assets/images/zyria-icon.svg" alt="Zyria" width="28" height="28" class="navbar__logo-icon">
+      <span class="navbar__logo-text">ZYRIA</span>
+    </a>
+
+    <div class="navbar__links">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="navbar__link--active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          class="navbar__link"
+        >{{ link.label }}</a>
+      }
+      <app-theme-toggle />
+    </div>
+
+    <button
+      class="navbar__hamburger"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="navbar__hamburger-line" [class.open]="mobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="mobileMenuOpen()"></span>
+      <span class="navbar__hamburger-line" [class.open]="mobileMenuOpen()"></span>
+    </button>
+  </div>
+
+  @if (mobileMenuOpen()) {
+    <div class="navbar__mobile-menu">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="navbar__mobile-link--active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          class="navbar__mobile-link"
+          (click)="closeMobileMenu()"
+        >{{ link.label }}</a>
+      }
+      <app-theme-toggle />
+    </div>
+  }
+</nav>
