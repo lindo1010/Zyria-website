@@ -3,28 +3,71 @@
 .about-preview {
   padding: 80px 0;
   background: var(--bg-secondary);
+
   &__container {
     @include container;
-    display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
-    @include desktop { grid-template-columns: 1.2fr 1fr; }
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+
+    @include desktop {
+      grid-template-columns: 1.2fr 1fr;
+    }
   }
+
   &__text {
-    .label { margin-bottom: 12px; }
-    h2 { margin-bottom: 16px; }
-    p { font-size: 0.9375rem; line-height: 1.8; margin-bottom: 24px; }
+    .label {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
   }
+
   &__link {
-    font-size: 0.875rem; color: var(--accent);
+    font-size: 0.875rem;
+    color: var(--accent);
     border-bottom: 1px solid rgba(13, 158, 117, 0.3);
     text-decoration: none;
-    &:hover { border-color: var(--accent); }
+
+    &:hover {
+      border-color: var(--accent);
+    }
   }
-  &__stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  &__stat { @include glow-card; padding: 24px; text-align: center; }
-  &__stat-value {
-    display: block; font-family: var(--font-display);
-    font-size: 1.75rem; font-weight: 700; color: var(--accent);
-    text-shadow: 0 0 15px var(--accent-glow);
+
+  &__manifesto {
+    position: relative;
+    padding: 28px 28px 28px 32px;
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(
+      135deg,
+      rgba(13, 158, 117, 0.08),
+      transparent 70%
+    );
   }
-  &__stat-label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+
+  &__quote {
+    margin: 0 0 12px;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
+    text-wrap: balance;
+  }
+
+  &__aside {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
 }

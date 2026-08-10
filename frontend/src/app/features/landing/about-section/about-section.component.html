@@ -6,13 +6,9 @@
       <p>We're a software company focused on building intelligent solutions that solve real problems. Our approach combines technical excellence with strategic thinking to deliver software that matters.</p>
       <a routerLink="/about" class="about-preview__link">Learn More &rarr;</a>
     </div>
-    <div class="about-preview__stats">
-      @for (stat of stats; track stat.label) {
-        <div class="about-preview__stat">
-          <span class="about-preview__stat-value">{{ stat.value }}</span>
-          <span class="about-preview__stat-label">{{ stat.label }}</span>
-        </div>
-      }
-    </div>
+    <aside class="about-preview__manifesto" aria-label="Zyria focus">
+      <p class="about-preview__quote">Software that thinks — built with purpose.</p>
+      <p class="about-preview__aside">We ship intelligent systems for teams who need results, not vanity metrics.</p>
+    </aside>
   </div>
 </section>

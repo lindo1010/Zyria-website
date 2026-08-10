@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs",
-    "deploy:gh": "ng build --configuration github && npx angular-cli-ghpages --dir=dist/frontend/browser"
+    "deploy:gh": "ng build --configuration github && node -e \"require('fs').copyFileSync('dist/frontend/browser/index.html','dist/frontend/browser/404.html')\" && npx angular-cli-ghpages --dir=dist/frontend/browser"
   },
   "prettier": {
     "printWidth": 100,

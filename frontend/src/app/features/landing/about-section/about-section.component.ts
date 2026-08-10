@@ -10,10 +10,5 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
   styleUrl: './about-section.component.scss'
 })
 export class AboutSectionComponent {
-  readonly stats = [
-    { value: '50+', label: 'Projects' },
-    { value: '15+', label: 'Clients' },
-    { value: '99%', label: 'Uptime' },
-    { value: '24/7', label: 'Support' },
-  ];
+  // TODO: Add real stats when we have projects (e.g. Projects / Clients / Uptime)
 }
