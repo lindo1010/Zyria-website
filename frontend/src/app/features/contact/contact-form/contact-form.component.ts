@@ -22,6 +22,8 @@ export class ContactFormComponent {
     email: ['', [Validators.required, Validators.email]],
     subject: [''],
     message: ['', [Validators.required, Validators.minLength(10)]],
+    // Honeypot: humans never see this field; bots that fill it get rejected.
+    botcheck: [false],
   });
 
   readonly subjectOptions = [
@@ -44,10 +46,14 @@ export class ContactFormComponent {
     this.contactApi.submitContact(this.form.getRawValue()).subscribe({
       next: (response) => {
         this.submitting.set(false);
-        this.submitSuccess.set(true);
-        this.form.reset();
+        if (response.success) {
+          this.submitSuccess.set(true);
+          this.form.reset();
+        } else {
+          this.submitError.set(response.message || 'Something went wrong. Please try again.');
+        }
       },
-      error: (err) => {
+      error: () => {
         this.submitting.set(false);
         this.submitError.set('Something went wrong. Please try again.');
       },

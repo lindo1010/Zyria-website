@@ -2,6 +2,22 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
 
+## Environment setup (required)
+
+The contact form submits to [Web3Forms](https://web3forms.com) and needs an access key:
+
+1. Copy `.env.example` to `.env`.
+2. Set `VITE_WEB3FORMS_ACCESS_KEY` to your key.
+
+`npm start` and `npm run build` automatically run `scripts/generate-env.mjs`, which writes the gitignored `src/environments/environment.generated.ts` from `.env` (or from a `VITE_WEB3FORMS_ACCESS_KEY` environment variable in CI, which takes precedence). If you run `ng serve`/`ng build` directly, run `npm run config:env` first. Never commit `.env` or the generated file.
+
+Security notes:
+
+- The access key is embedded in the built JavaScript bundle; this is unavoidable for a client-side form and is how Web3Forms is designed to work. Keeping it out of git prevents leaking it via the repository, not via the deployed site.
+- In the Web3Forms dashboard, restrict the key to your production domain so it cannot be abused from other sites; optionally enable hCaptcha for stronger spam protection.
+- The form includes a hidden `botcheck` honeypot field that Web3Forms uses to reject bot submissions.
+- If you suspect the key has been abused, rotate it in the Web3Forms dashboard and update `.env`.
+
 ## Development server
 
 To start a local development server, run:

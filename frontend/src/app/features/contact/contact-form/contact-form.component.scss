@@ -16,6 +16,15 @@
     margin-bottom: 20px;
   }
 
+  &__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   &__label {
     display: block;
     font-size: 0.8125rem;

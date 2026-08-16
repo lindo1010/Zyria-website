@@ -17,11 +17,4 @@ export class FooterComponent {
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
   ];
-
-  readonly services = [
-    'AI Solutions',
-    'Web Development',
-    'Mobile Development',
-    'Cloud & DevOps',
-  ];
 }

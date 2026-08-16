@@ -9,6 +9,16 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
     <h3 class="contact-form__title">Send Us a Message</h3>
 
+    <!-- Honeypot (hidden from humans, catches bots) -->
+    <input
+      type="checkbox"
+      formControlName="botcheck"
+      class="contact-form__honeypot"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true"
+    >
+
     <!-- Name -->
     <div class="contact-form__field">
       <label for="name" class="contact-form__label">Full Name *</label>
