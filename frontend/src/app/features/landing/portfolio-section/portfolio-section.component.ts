@@ -10,6 +10,8 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
   templateUrl: './portfolio-section.component.html',
   styleUrl: './portfolio-section.component.scss'
 })
+// TODO: Currently unused on the landing page (replaced by ProcessSectionComponent).
+// Re-enable in landing.component.ts once the placeholder projects below are replaced with real ones.
 export class PortfolioSectionComponent {
   readonly projects: ProjectData[] = [
     { title: 'Project Alpha', description: 'AI-powered analytics platform for real-time business insights.', tags: ['AI', 'Angular'] },

@@ -1,0 +1,14 @@
+<section class="process">
+  <div class="process__container">
+    <app-section-header label="How We Work" title="From Idea to Impact" />
+    <ol class="process__steps" appAnimateOnScroll>
+      @for (step of steps; track step.number) {
+        <li class="process__step">
+          <span class="process__number" aria-hidden="true">{{ step.number }}</span>
+          <h3 class="process__title">{{ step.title }}</h3>
+          <p class="process__description">{{ step.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
